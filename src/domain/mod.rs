@@ -1,12 +1,25 @@
 mod orders;
 
+pub use orders::Cancelled;
+pub use orders::Completed;
+pub use orders::Confirmed;
+pub use orders::Order;
+pub use orders::OrderError;
+pub use orders::OrderId;
+pub use orders::OrderItem;
+pub use orders::Pending;
+pub use orders::Status;
+
 mod products;
 
 pub use products::Product;
 pub use products::ProductId;
-pub use products::ProductRepositoryItem;
 
-mod repository_item;
+mod money;
 
-pub use repository_item::RepositoryItem;
-pub use repository_item::RepositoryItemId;
+pub use money::Money;
+
+mod stock;
+
+pub use stock::Stock;
+pub use stock::StockError;
