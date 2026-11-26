@@ -1,6 +1,7 @@
 use super::StockError;
 use crate::ProductId;
 
+#[derive(Debug, PartialEq)]
 pub struct Stock {
     product_id: ProductId,
     available: u32,

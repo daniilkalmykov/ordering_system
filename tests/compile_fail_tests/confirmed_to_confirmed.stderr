@@ -1,0 +1,7 @@
+error[E0599]: no method named `confirm` found for struct `Order<Confirmed>` in the current scope
+ --> tests/compile_fail_tests/confirmed_to_confirmed.rs:4:19
+  |
+4 |     let _ = order.confirm();
+  |                   ^^^^^^^ method not found in `Order<Confirmed>`
+  |
+  = note: the method was found for `Order`

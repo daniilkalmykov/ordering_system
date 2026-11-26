@@ -1,0 +1,9 @@
+error[E0599]: no method named `cancel` found for struct `Order<Completed>` in the current scope
+ --> tests/compile_fail_tests/completed_to_cancelled.rs:4:19
+  |
+4 |     let _ = order.cancel();
+  |                   ^^^^^^ method not found in `Order<Completed>`
+  |
+  = note: the method was found for
+          - `Order`
+          - `Order<Confirmed>`

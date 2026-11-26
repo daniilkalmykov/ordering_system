@@ -3,6 +3,7 @@ use std::num::NonZeroU32;
 use super::OrderError;
 use crate::{Money, ProductId};
 
+#[derive(Debug, PartialEq, Clone)]
 pub struct OrderItem {
     product_id: ProductId,
     quantity: NonZeroU32,

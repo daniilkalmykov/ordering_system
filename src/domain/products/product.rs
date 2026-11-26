@@ -52,3 +52,9 @@ impl ProductId {
         &self.0
     }
 }
+
+impl Default for ProductId {
+    fn default() -> Self {
+        Self::new()
+    }
+}

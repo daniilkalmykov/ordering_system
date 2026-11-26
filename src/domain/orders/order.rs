@@ -10,6 +10,7 @@ mod sealed {
 
 pub trait Status: sealed::Sealed {}
 
+#[derive(Debug, PartialEq)]
 pub struct Pending;
 
 impl sealed::Sealed for Pending {}
@@ -30,6 +31,7 @@ pub struct Cancelled;
 impl sealed::Sealed for Cancelled {}
 impl Status for Cancelled {}
 
+#[derive(Debug, PartialEq)]
 pub struct Order<State: Status = Pending> {
     id: OrderId,
     items: Vec<OrderItem>,
@@ -132,5 +134,11 @@ impl OrderId {
 
     pub fn as_uuid(&self) -> &Uuid {
         &self.0
+    }
+}
+
+impl Default for OrderId {
+    fn default() -> Self {
+        Self::new()
     }
 }

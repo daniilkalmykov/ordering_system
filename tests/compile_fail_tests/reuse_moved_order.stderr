@@ -1,0 +1,16 @@
+error[E0382]: use of moved value: `order`
+ --> tests/compile_fail_tests/reuse_moved_order.rs:6:22
+  |
+3 | fn reuse_moved_order(order: Order<Pending>) {
+  |                      ----- move occurs because `order` has type `Order`, which does not implement the `Copy` trait
+4 |     let _confirmed = order.confirm();
+  |                            --------- `order` moved due to this method call
+5 |
+6 |     let _cancelled = order.cancel();
+  |                      ^^^^^ value used here after move
+  |
+note: `Order::confirm` takes ownership of the receiver `self`, which moves `order`
+ --> src/domain/orders/order.rs
+  |
+  |     pub fn confirm(self) -> Order<Confirmed> {
+  |                    ^^^^

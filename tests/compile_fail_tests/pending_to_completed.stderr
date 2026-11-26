@@ -1,0 +1,7 @@
+error[E0599]: no method named `complete` found for struct `Order` in the current scope
+ --> tests/compile_fail_tests/pending_to_completed.rs:4:19
+  |
+4 |     let _ = order.complete();
+  |                   ^^^^^^^^ method not found in `Order`
+  |
+  = note: the method was found for `Order<Confirmed>`

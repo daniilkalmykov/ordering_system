@@ -19,7 +19,7 @@ mod money;
 
 pub use money::Money;
 
-mod stock;
+mod stock_system;
 
-pub use stock::Stock;
-pub use stock::StockError;
+pub use stock_system::Stock;
+pub use stock_system::StockError;
